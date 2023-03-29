@@ -1,12 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ДЗ-4</title>
 </head>
+
 <body>
-    Создали сайт
+    <script>
+        /*-- Задание 1
+ Создать переменные num1, num2 которые пользователь вводит с клавиатуры
+Проверьте, что переменная num1 равна или меньше 1, а переменная num2 больше или равна 3. */
+
+        let num1 = Number(prompt("Введите первое число"));
+        let num2 = Number(prompt("Введите второе число"));
+
+        if (num1 <= 1) {
+            console.log(`${num1} равно или меньше 1`);
+        } else if (num2 >= 3) {
+            console.log(`${num2} больше или равно 3`);
+        } else {
+            console.log("Без комментариев");
+        }
+
+        /* Задание 2
+        Перепишите код к тернарному оператору
+        
+        let test = true;
+        if (test === true) {
+        console.log('+++');
+        } else {
+        console.log('---');
+        } */
+
+        let test = true;
+        console.log((test === true) ? '+++' : '---');
+
+        /* Задание 3
+        В переменной day лежит какое-то число из интервала от 1 до 31. Определите в какую декаду месяца попадает это число (в первую, вторую или третью). */
+
+        let day = Math.floor(Math.random() * (32 - 1) + 1);
+
+        if (day >= 1 && day < 10) {
+            console.log(`${day} - первая декада месяца`);
+        } else if (day >= 10 && day < 20) {
+            console.log(`${day} - вторая декада месяца`);
+        }
+        else { console.log(`${day} - третья декада месяца`) };
+
+        /* Задание 4 Необходимо от пользователя получить число.
+Необходимо вывести разряды числа, а именно: количество сотен, десятков и единиц. */
+
+        let userNum = Number(prompt("Введите положительное целое число"));
+        let units = userNum % 10;
+        let tens = ((userNum - units) % 100) / 10;
+        let hundreds = ((userNum - tens * 10 - units) % 1000) / 100;
+
+        console.log(`В числе ${userNum}:
+        Количество сотен: ${hundreds}
+        Количество десятков: ${tens}
+        Количество единиц: ${units}`);
+    </script>
+
+
+
 </body>
+
 </html>
